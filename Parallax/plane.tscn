@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://plane.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+speed = null
+
+[node name="Plane" type="KinematicBody2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( -3, 100 )
