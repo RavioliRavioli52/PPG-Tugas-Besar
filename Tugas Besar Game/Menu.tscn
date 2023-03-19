@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://Metal Slug Latino Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://background/d5.png" type="Texture" id=3]
+[ext_resource path="res://background/d2.png" type="Texture" id=4]
+[ext_resource path="res://background/d1.png" type="Texture" id=5]
+[ext_resource path="res://background/d3.png" type="Texture" id=6]
+[ext_resource path="res://background/d4.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 85
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -3.0
+margin_right = 2.0
+margin_bottom = -3.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 0.0 ]
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 108.0
+margin_top = 117.0
+margin_right = 948.0
+margin_bottom = 202.0
+custom_fonts/font = SubResource( 1 )
+text = "DESTROY ALL ALIEN"
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -99.0
+margin_right = 195.0
+margin_bottom = -39.0
+custom_fonts/font = SubResource( 2 )
+text = "Kill or Be Kill"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -259.0
+margin_right = 512.0
+margin_bottom = -83.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 56.0
+focus_neighbour_top = NodePath("../QuitButton")
+custom_fonts/font = SubResource( 3 )
+text = "Start"
+
+[node name="OptionButton" type="Button" parent="VBoxContainer"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 4 )
+text = "Option"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 176.0
+focus_neighbour_bottom = NodePath("../StartButton")
+custom_fonts/font = SubResource( 5 )
+text = "Quit"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Control"]
+
+[node name="sky" type="Sprite" parent="Control/ParallaxBackground"]
+position = Vector2( 513.5, 302 )
+scale = Vector2( 2.02953, 4.85484 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Control/ParallaxBackground"]
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="dessert1" type="Sprite" parent="Control/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 509.5, 500 )
+scale = Vector2( 4.01938, 2.68421 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Control/ParallaxBackground"]
+motion_mirroring = Vector2( 2020, 0 )
+
+[node name="Building" type="Sprite" parent="Control/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 513, 374 )
+scale = Vector2( 2.17336, 2.10909 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Control/ParallaxBackground"]
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="dessert2" type="Sprite" parent="Control/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 511, 527.763 )
+scale = Vector2( 2.00778, 0.875146 )
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Control/ParallaxBackground"]
+motion_mirroring = Vector2( 1026, 0 )
+
+[node name="dessert4" type="Sprite" parent="Control/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 514.5, 556.688 )
+scale = Vector2( 2.01367, 1.04605 )
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_OptionButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
