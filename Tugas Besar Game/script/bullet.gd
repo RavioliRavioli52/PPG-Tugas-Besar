@@ -1,7 +1,7 @@
-extends Area2D
+extends Node2D
 
 
-export var speed: float = 5000
+export var speed: float = 1000
 
 func _physics_process(delta):
 	position.x += speed * delta

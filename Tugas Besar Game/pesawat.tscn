@@ -40,14 +40,12 @@ position = Vector2( 0.00012207, -1.73188 )
 scale = Vector2( 1.07731, 0.85352 )
 frames = SubResource( 4 )
 animation = "tengah"
+frame = 1
 playing = true
 flip_h = true
 
 [node name="BulletPoint" type="Node2D" parent="player"]
 position = Vector2( 15.2014, 12.1226 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="bullet" parent="player" instance=ExtResource( 4 )]
-position = Vector2( 15.2014, 12.1226 )
+position = Vector2( -3.8002, 391.39 )
