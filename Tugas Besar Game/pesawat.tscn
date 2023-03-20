@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprite/plane/2.png" type="Texture" id=1]
+[ext_resource path="res://script/animasi terbang.gd" type="Script" id=2]
+[ext_resource path="res://sprite/plane/1.png" type="Texture" id=3]
+[ext_resource path="res://bullet.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 47.504, 17.3182 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "tengah",
+"speed": 20.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 0.526272, 0.577429 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 8.0, 610.0 ],
+"_edit_vertical_guides_": [ -2.0 ]
+}
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( -0.00012207, 6.10352e-05 )
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+visible = false
+position = Vector2( 0.201172, 0.999939 )
+shape = SubResource( 5 )
+
+[node name="spaceship" type="AnimatedSprite" parent="player"]
+modulate = Color( 1, 1, 0.996078, 1 )
+position = Vector2( 0.00012207, -1.73188 )
+scale = Vector2( 1.07731, 0.85352 )
+frames = SubResource( 4 )
+animation = "tengah"
+playing = true
+flip_h = true
+
+[node name="BulletPoint" type="Node2D" parent="player"]
+position = Vector2( 15.2014, 12.1226 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bullet" parent="player" instance=ExtResource( 4 )]
+position = Vector2( 15.2014, 12.1226 )
