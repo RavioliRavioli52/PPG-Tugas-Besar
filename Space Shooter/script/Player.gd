@@ -37,7 +37,9 @@ func _on_Reload_speed_timeout():
 
 func _on_HitBox_area_entered(area):
 	if(area.is_in_group("Enemy")):
-		is_dead = true
-		visible = false
-		yield(get_tree().create_timer(1), "timeout")
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://tscn/Menu 2.tscn")
+#		is_dead = true
+#		visible = false
+#		yield(get_tree().create_timer(1), "timeout")
+#		get_tree().reload_current_scene()
+	

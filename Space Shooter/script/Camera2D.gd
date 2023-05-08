@@ -16,7 +16,7 @@ func _process(delta):
 		global_position += Vector2(rand_range(-shake_intensity, shake_intensity), rand_range(-shake_intensity, shake_intensity)) * delta
 		
 func screen_shake(intensity, time):
-	zoom = Vector2(1,1) - Vector2(intensity * 0.001, intensity * 0.001)
+	zoom = Vector2(1,1) - Vector2(intensity * 0.009, intensity * 0.009)
 	shake_intensity = intensity
 	$screen_shake_time.wait_time = time
 	$screen_shake_time.start()
