@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprite/musuh/Alien_2_Enlarged.png" type="Texture" id=1]
+[ext_resource path="res://script/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://sprite/musuh/Alien_1_Enlarged.png" type="Texture" id=3]
+[ext_resource path="res://sprite/musuh/Alien_3_Enlarged.png" type="Texture" id=4]
+[ext_resource path="res://sprite/musuh/Alien_4_Enlarged.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 55.2829, 43.4783 )
+
+[node name="Enemy" type="AnimatedSprite"]
+modulate = Color( 0.976471, 0.0745098, 0.243137, 1 )
+position = Vector2( 9.53674e-07, 0 )
+scale = Vector2( 0.172631, 0.227083 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+position = Vector2( -0.282917, 0.217398 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Stun_timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="Stun_timer" to="." method="_on_Stun_timer_timeout"]

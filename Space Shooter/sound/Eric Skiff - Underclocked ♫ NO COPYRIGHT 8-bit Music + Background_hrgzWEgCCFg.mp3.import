@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Eric Skiff - Underclocked ♫ NO COPYRIGHT 8-bit Music + Background_hrgzWEgCCFg.mp3-ebad1b9ab325aac2e1342207b8ea0575.mp3str"
+
+[deps]
+
+source_file="res://sound/Eric Skiff - Underclocked ♫ NO COPYRIGHT 8-bit Music + Background_hrgzWEgCCFg.mp3"
+dest_files=[ "res://.import/Eric Skiff - Underclocked ♫ NO COPYRIGHT 8-bit Music + Background_hrgzWEgCCFg.mp3-ebad1b9ab325aac2e1342207b8ea0575.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

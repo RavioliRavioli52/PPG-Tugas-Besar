@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bottle Cap.mp3-dec707622b87d64158d0f7d2f421ca31.mp3str"
+
+[deps]
+
+source_file="res://sound/Bottle Cap.mp3"
+dest_files=[ "res://.import/Bottle Cap.mp3-dec707622b87d64158d0f7d2f421ca31.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

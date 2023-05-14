@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dangun Feveron OST ~ Disco 999.mp3-b1c5ff6308788e8bdfca36eca71d0c98.mp3str"
+
+[deps]
+
+source_file="res://sound/Dangun Feveron OST ~ Disco 999.mp3"
+dest_files=[ "res://.import/Dangun Feveron OST ~ Disco 999.mp3-b1c5ff6308788e8bdfca36eca71d0c98.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

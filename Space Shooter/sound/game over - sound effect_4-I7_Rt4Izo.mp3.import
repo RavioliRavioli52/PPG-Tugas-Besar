@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/game over - sound effect_4-I7_Rt4Izo.mp3-d06cb1611242b44f32720942618ba658.mp3str"
+
+[deps]
+
+source_file="res://sound/game over - sound effect_4-I7_Rt4Izo.mp3"
+dest_files=[ "res://.import/game over - sound effect_4-I7_Rt4Izo.mp3-d06cb1611242b44f32720942618ba658.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
