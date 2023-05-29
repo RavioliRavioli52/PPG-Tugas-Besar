@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tscn/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/Arena.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://sound/Eric Skiff - Underclocked ♫ NO COPYRIGHT 8-bit Music + Background_hrgzWEgCCFg.mp3" type="AudioStream" id=7]
 [ext_resource path="res://tscn/Enemy_1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://tscn/Enemy_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tscn/Power_up_reload.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tscn/Power_up_damage.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -30,11 +32,12 @@ font_data = ExtResource( 3 )
 [node name="Arena" type="Node2D"]
 script = ExtResource( 2 )
 enemies = [ ExtResource( 8 ), ExtResource( 9 ) ]
+power_ups = [ ExtResource( 10 ), ExtResource( 11 ) ]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 321, 182 )
 scale = Vector2( 0.359583, 0.359583 )
-frame = 6
+frame = 17
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -43,7 +46,11 @@ environment = SubResource( 1 )
 wait_time = 3.0
 autostart = true
 
-[node name="Difficulty_timer" type="Timer" parent="Enemy_spawn_timer"]
+[node name="Difficulty_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Power_up_spawn_timer" type="Timer" parent="."]
+wait_time = 15.0
 autostart = true
 
 [node name="UI" type="Node2D" parent="."]
@@ -88,5 +95,6 @@ volume_db = -26.001
 autoplay = true
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="Enemy_spawn_timer/Difficulty_timer" to="." method="_on_Difficulty_timer_timeout"]
+[connection signal="timeout" from="Difficulty_timer" to="." method="_on_Difficulty_timer_timeout"]
+[connection signal="timeout" from="Power_up_spawn_timer" to="." method="_on_Power_up_spawn_timer_timeout"]
 [connection signal="timeout" from="Camera2D/screen_shake_time" to="Camera2D" method="_on_screen_shake_time_timeout"]

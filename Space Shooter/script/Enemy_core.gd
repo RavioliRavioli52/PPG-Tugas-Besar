@@ -39,7 +39,7 @@ func _on_Hitbox_area_entered(area):
 	if(area.is_in_group("Enemy_damager")):
 		modulate = Color.white
 		velocty = -velocty * knockback
-		hp -= 1
+		hp -= area.get_parent().damage
 		stun = true
 		$Stun_timer.start()
 		area.get_parent().queue_free()

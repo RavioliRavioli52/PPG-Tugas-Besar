@@ -126,7 +126,10 @@ script = ExtResource( 1 )
 wait_time = 0.1
 one_shot = true
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="Power_up_cool_down" type="Timer" parent="."]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 visible = false
@@ -139,4 +142,5 @@ volume_db = -19.81
 pitch_scale = 1.2
 
 [connection signal="timeout" from="Reload_speed" to="." method="_on_Reload_speed_timeout"]
+[connection signal="timeout" from="Power_up_cool_down" to="." method="_on_Power_up_cool_down_timeout"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
