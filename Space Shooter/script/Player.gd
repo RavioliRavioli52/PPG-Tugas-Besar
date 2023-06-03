@@ -60,6 +60,6 @@ func _on_Power_up_cool_down_timeout():
 	if power_up_reset.find("Power_up_reset") != null :
 		reload_speed = default_reload_speed
 		power_up_reset.erase("Power_up_reset")
-	elif power_up_reset.find("Power_up_damage") != null:
+	if power_up_reset.find("Power_up_damage") != null:
 		damage = default_damage
 		power_up_reset.erase("Power_up_damage")

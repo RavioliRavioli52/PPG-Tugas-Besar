@@ -118,7 +118,7 @@ radius = 46.0435
 [node name="Player" type="AnimatedSprite"]
 scale = Vector2( 0.169271, 0.169271 )
 frames = SubResource( 43 )
-frame = 5
+frame = 12
 playing = true
 script = ExtResource( 1 )
 

@@ -24,7 +24,7 @@ func _on_Enemy_spawn_timer_timeout():
 
 func _on_Difficulty_timer_timeout():
 	if($Enemy_spawn_timer.wait_time > 0.5):
-		$Enemy_spawn_timer.wait_time -= 0.025
+		$Enemy_spawn_timer.wait_time -= 0.050
 
 
 func _on_Power_up_spawn_timer_timeout():
