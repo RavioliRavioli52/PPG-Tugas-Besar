@@ -4,6 +4,7 @@ var speed = 75
 
 var velocty = Vector2()
 
+
 var stun = false
 var hp = 3
 
@@ -18,7 +19,6 @@ func _process(delta):
 	if(hp <= 0):
 		if(Global.camera != null):
 			Global.camera.screen_shake(20, 0.1)
-		
 		Global.points += 10
 		queue_free()
 

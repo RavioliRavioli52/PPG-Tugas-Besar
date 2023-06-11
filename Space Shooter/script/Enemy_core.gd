@@ -5,6 +5,8 @@ export(int) var speed = 75
 var velocty = Vector2()
 
 var stun = false
+
+
 export(int) var hp = 3
 export(int) var knockback = 600
 export(int) var screen_shake = 120
@@ -23,7 +25,6 @@ func _process(_delta):
 			var blood_particles_instance = Global.instance_node(blood_particles, global_position, Global.node_creation_parent)
 			blood_particles_instance.rotation = velocty.angle()
 			blood_particles_instance.modulate = Color.from_hsv(current_color.h, 0.75, current_color.v)
-			
 		queue_free()
 
 func basic_movement_towards_player(delta):

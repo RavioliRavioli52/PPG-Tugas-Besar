@@ -13,7 +13,7 @@ func set_is_paused(value):
 
 
 func _on_ResumBtn_pressed():
-	self.is_paused = false
+	self.is_paused = true
 
 
 func _on_QuitBtn_pressed():

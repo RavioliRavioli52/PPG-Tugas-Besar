@@ -37,7 +37,7 @@ power_ups = [ ExtResource( 10 ) ]
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 321, 182 )
 scale = Vector2( 0.359583, 0.359583 )
-frame = 13
+frame = 6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -95,6 +95,7 @@ volume_db = -26.001
 autoplay = true
 
 [node name="GUI" parent="." instance=ExtResource( 11 )]
+visible = false
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="Difficulty_timer" to="." method="_on_Difficulty_timer_timeout"]

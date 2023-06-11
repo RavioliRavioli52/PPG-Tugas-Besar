@@ -4,4 +4,5 @@
 
 [node name="Enemy_1" instance=ExtResource( 1 )]
 modulate = Color( 1, 0, 0, 1 )
+frame = 1
 knockback = 100

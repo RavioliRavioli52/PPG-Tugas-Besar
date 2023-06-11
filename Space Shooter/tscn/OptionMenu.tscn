@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://script/OptionMenu.gd" type="Script" id=1]
 [ext_resource path="res://picture/mainMenu.jpeg" type="Texture" id=2]
+[ext_resource path="res://sound/Dangun Feveron OST ~ Disco 999.mp3" type="AudioStream" id=3]
 
 [node name="OptionMenu" type="Control"]
 anchor_right = 1.0
@@ -24,38 +25,39 @@ margin_right = 144.5
 margin_bottom = 32.0
 
 [node name="VBoxContaine" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 66.0
+margin_right = 74.0
 margin_bottom = 64.0
 
 [node name="Fullscreen" type="Label" parent="HBoxContainer/VBoxContaine"]
 margin_top = 8.0
-margin_right = 66.0
+margin_right = 74.0
 margin_bottom = 22.0
 size_flags_vertical = 6
 text = "Fullscreen"
 
 [node name="Master" type="Label" parent="HBoxContainer/VBoxContaine"]
 margin_top = 42.0
-margin_right = 66.0
+margin_right = 74.0
 margin_bottom = 56.0
 size_flags_vertical = 6
-text = "Audio"
+text = "Mute Audio"
 
 [node name="Check" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 70.0
+margin_left = 78.0
 margin_right = 289.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer/Check"]
-margin_right = 219.0
+margin_right = 211.0
 margin_bottom = 24.0
 
-[node name="Master" type="HSlider" parent="HBoxContainer/Check"]
+[node name="CheckBox1" type="CheckBox" parent="HBoxContainer/Check"]
 margin_top = 28.0
-margin_right = 219.0
+margin_right = 211.0
 margin_bottom = 64.0
 size_flags_vertical = 3
+shortcut_in_tooltip = false
 
 [node name="BackBtn" type="Button" parent="."]
 anchor_top = 1.0
@@ -64,6 +66,10 @@ margin_top = -20.0
 margin_right = 12.0
 text = "Back"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
 [connection signal="toggled" from="HBoxContainer/Check/CheckBox" to="." method="_on_CheckBox_toggled"]
-[connection signal="value_changed" from="HBoxContainer/Check/Master" to="." method="_on_Master_value_changed"]
+[connection signal="toggled" from="HBoxContainer/Check/CheckBox1" to="." method="_on_CheckBox1_toggled"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

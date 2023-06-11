@@ -73,4 +73,5 @@ anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 8.32
 autoplay = true

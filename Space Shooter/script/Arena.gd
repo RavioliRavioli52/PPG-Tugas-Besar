@@ -3,6 +3,7 @@ extends Node2D
 export(Array, PackedScene) var enemies
 export(Array, PackedScene) var power_ups
 
+
 func _ready():
 	Global.node_creation_parent = self
 	
@@ -20,6 +21,7 @@ func _on_Enemy_spawn_timer_timeout():
 	var enemy_number = round(rand_range(0, enemies.size() - 1))
 	
 	Global.instance_node(enemies[enemy_number], enemy_position, self)
+	
 
 
 func _on_Difficulty_timer_timeout():
