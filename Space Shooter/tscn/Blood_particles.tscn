@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprite/Square.png" type="Texture" id=1]
 [ext_resource path="res://script/Blood_particles.gd" type="Script" id=2]
+[ext_resource path="res://script/Enemy_blood.gd" type="Script" id=3]
 
-[node name="Blood_particles" type="CPUParticles2D"]
+[node name="Enemy_blood" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+rotation = -3.14159
 z_index = -5
-amount = 15
+amount = 30
 lifetime = 0.2
 explosiveness = 1.0
 texture = ExtResource( 1 )
@@ -17,9 +22,15 @@ scale_amount = 0.1
 scale_amount_random = 0.2
 script = ExtResource( 2 )
 
-[node name="Freeze_blood" type="Timer" parent="."]
+[node name="Freeze_blood" type="Timer" parent="Particles"]
 wait_time = 0.15
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Freeze_blood" to="." method="_on_Freeze_blood_timeout"]
+[node name="Fade_out_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Particles/Freeze_blood" to="Particles" method="_on_Freeze_blood_timeout"]
+[connection signal="timeout" from="Fade_out_timer" to="." method="_on_Fade_out_timer_timeout"]

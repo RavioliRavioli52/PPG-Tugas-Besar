@@ -16,7 +16,6 @@ var default_reload_speed = reload_speed
 
 var power_up_reset = []
 
-onready var pewShot = $pewshot
 
 func _ready():
 	Global.player = self
@@ -40,7 +39,6 @@ func _process(delta):
 		var bullet_instance = Global.instance_node(bullet, global_position, Global.node_creation_parent)
 		bullet_instance.damage = damage
 		$Reload_speed.start()
-		pewShot.play()
 		can_shoot = false
 
 func _on_Reload_speed_timeout():

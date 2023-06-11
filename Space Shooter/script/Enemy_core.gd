@@ -38,7 +38,7 @@ func basic_movement_towards_player(delta):
 func _on_Hitbox_area_entered(area):
 	if(area.is_in_group("Enemy_damager")):
 		modulate = Color.white
-		velocty = -velocty * knockback
+		#velocty = -velocty * knockback
 		hp -= area.get_parent().damage
 		stun = true
 		$Stun_timer.start()
